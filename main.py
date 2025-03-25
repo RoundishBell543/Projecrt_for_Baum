@@ -15,13 +15,13 @@ class MyWidget(QMainWindow):
         super().__init__()
         uic.loadUi('main_window.ui', self)  # Загружаем дизайн
         self.pushButton.clicked.connect(self.run_analytical_window)
-        self.pushButton_2.clicked.connect(self.closeEvent)
+        self.pushButton_2.clicked.connect(self.run_geometrical_window)
 
     def run_analytical_window(self):
         self.analytical_window = Analytical_ChartWindow()
         self.analytical_window.show()
         
-    def closeEvent(self):
+    def run_geometrical_window(self):
         self.analytical_window = Geometric_ChartWindow()
         self.analytical_window.show()
         
